@@ -1,0 +1,12 @@
+# TestNG
+test-output/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Maven
+target/
+*.releaseBackup
+deploy/

@@ -1,4 +1,4 @@
-Java_Concurrency_In_Practice
+Java Concurrency In Practice
 ============================
 
 《Java 并发编程实战》，实践书中的例子，看哪些可以用于实际项目中。（但在使用之前，需要经过详细的单元和性能测试。）
