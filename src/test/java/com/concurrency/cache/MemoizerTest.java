@@ -20,7 +20,7 @@ import static java.lang.System.out;
 
 import static org.testng.Assert.*;
 
-import com.concurrency.time.TimeStats;
+import com.concurrency.synchronization.TimeStatsLatch;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -67,7 +67,7 @@ public class MemoizerTest {
 	public void compute(String key, int nThreads, long expectedRunTime) throws InterruptedException {
 		MemoizerTask mTask = new MemoizerTask(key);
 		
-		long time = TimeStats.timeTasks(nThreads, mTask);
+		long time = TimeStatsLatch.timeTasks(nThreads, mTask);
 		out.println("Thread Number: " + nThreads + "\t Run Time(ms): " + time);
 		assertTrue(time <= expectedRunTime);
 		assertEquals(mTask.cacheSize(), 1);
