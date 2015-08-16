@@ -1,12 +1,17 @@
-# TestNG
-test-output/
-
-# Eclipse
-.classpath
-.project
-.settings/
+# Gradle
+.gradle/
 
 # Maven
 target/
-*.releaseBackup
-deploy/
+
+# TestNG
+test-output/
+
+# IDEA
+.idea/
+*.iml
+
+# Eclipse
+.settings/
+.classpath
+.project
