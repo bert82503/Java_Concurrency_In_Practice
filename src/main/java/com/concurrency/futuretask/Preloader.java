@@ -48,12 +48,19 @@ public class Preloader {
     }
 
     /**
-     * 转换为业务自定义的异常类。
+     * 如果 Throwable 是 Error，那么抛出它；如果是 RuntimeException，那么返回它；
+     * 否则，抛出 IllegalStateException。
      *
-     * @param cause
+     * @param t
      * @return
      */
-    private DataLoadException launderThrowable(Throwable cause) {
-        return new DataLoadException(cause.getMessage(), cause.getCause());
+    private static RuntimeException launderThrowable(Throwable t) {
+        if (t instanceof RuntimeException) {
+            return (RuntimeException) t;
+        } else if (t instanceof Error) {
+            throw (Error) t;
+        } else {
+            throw new IllegalStateException("Not unchecked", t);
+        }
     }
 }
